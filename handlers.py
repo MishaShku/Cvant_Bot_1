@@ -64,7 +64,7 @@ async def name(message: Message, state: FSMContext):
 @user_router.message(Reg.password)
 async def password(message: Message, state: FSMContext):
     f = open('date.txt', 'a+')
-    f.write(f'{message.text} ')
+    f.write(f'{message.text}\n')
     f.close()
     await state.update_data(password=message.text)
     await message.answer(text='Хорошо, осталось указать свой номер телефона:')
